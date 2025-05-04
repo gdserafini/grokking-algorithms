@@ -15,11 +15,11 @@ public class BinarySearch {
         //end of iterations -> start == end (final guess)
         while(start <= end){
             int mid = getMidIndex(start, end);
-            int comparison = getComparison(values[mid], target);
+            int comparison = getComparison(values, mid, target);
 
             if(comparison == 0) return mid; //value[mid] is equal to target
             /**
-             * values[mid] is less than tagert
+             * values[mid] is less than target
              * So, the binary search will use the upper half of the list:
              * start = next position from mid (mid + 1)
              */
@@ -38,22 +38,31 @@ public class BinarySearch {
 
     private static <T> boolean validParams(T[] values, T target){
         return !(
-            values.length == 0 || 
             values == null || 
-            target == null
+            target == null ||
+            values.length == 0 
         );
     }
 
     private static int getMidIndex(int start, int end){
-        return ((start + end) / 2);
+        return (start + (end - start) / 2);
     }
 
-    private static <T extends Comparable<T>> int getComparison(T value, T target){
+    private static <T extends Comparable<T>> int getComparison(T[] values, int mid, T target){
         /**
          * Returns a negative value if values[mid] is less than target
          * Returns 0 if equal
          * Return a positive value if greater
          */
-        return value.compareTo(target);
+        validateMidValue(values, mid);
+        return values[mid].compareTo(target);
+    }
+
+    private static <T> void validateMidValue(T[] values, int mid){
+        if(values[mid] == null){
+            throw new IllegalArgumentException(
+                "Array contains a null value at index: " + mid
+            );
+        }
     }
 }
