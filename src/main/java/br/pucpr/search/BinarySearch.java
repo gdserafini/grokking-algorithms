@@ -7,20 +7,15 @@ package br.pucpr.search;
  */
 public class BinarySearch {
     public static <T extends Comparable<T>> int search(T[] values, T target){
-        if(values.length == 0 || values == null || target == null) return -1;
+        if(!validParams(values, target)) return -1;
 
         int start = 0;
         int end = values.length - 1;
         
         //end of iterations -> start == end (final guess)
         while(start <= end){
-            int mid = (start + end) / 2;
-            /**
-             * Returns a negative value if values[mid] is less than target
-             * Returns 0 if equal
-             * Return a positive value if greater
-             */
-            int comparison = values[mid].compareTo(target);
+            int mid = getMidIndex(start, end);
+            int comparison = getComparison(values[mid], target);
 
             if(comparison == 0) return mid; //value[mid] is equal to target
             /**
@@ -33,10 +28,32 @@ public class BinarySearch {
              * values[mid] is greater than target
              * So, the BS will use the lower half of the list:
              * end = previous position from the mid (mid - 1)
+             * @param <T>
              */
             if(comparison > 0) end = mid - 1;
         }
         
         return -1; //not find
+    }
+
+    private static <T> boolean validParams(T[] values, T target){
+        return !(
+            values.length == 0 || 
+            values == null || 
+            target == null
+        );
+    }
+
+    private static int getMidIndex(int start, int end){
+        return ((start + end) / 2);
+    }
+
+    private static <T extends Comparable<T>> int getComparison(T value, T target){
+        /**
+         * Returns a negative value if values[mid] is less than target
+         * Returns 0 if equal
+         * Return a positive value if greater
+         */
+        return value.compareTo(target);
     }
 }
