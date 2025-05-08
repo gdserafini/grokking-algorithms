@@ -2,7 +2,7 @@ package br.pucpr.search;
 
 /**
  * Binary search return the position of a target value in a sorted list
- * The running time is O(log n) -> 2^x = n
+ * The running time is O(log n) -> 2^x = n -> growth of number of operations
  * (x is number of operations, so, time = optime x n)
  */
 public class BinarySearch {
@@ -14,8 +14,9 @@ public class BinarySearch {
         
         //end of iterations -> start == end (final guess)
         while(start <= end){
-            int mid = getMidIndex(start, end);
-            int comparison = getComparison(values, mid, target);
+            int mid = (start + end) / 2;
+            validateMidValue(values, mid);
+            int comparison = values[mid].compareTo(target); //compares values[mid] with target
 
             if(comparison == 0) return mid; //value[mid] is equal to target
             /**
@@ -42,20 +43,6 @@ public class BinarySearch {
             target == null ||
             values.length == 0 
         );
-    }
-
-    private static int getMidIndex(int start, int end){
-        return (start + (end - start) / 2);
-    }
-
-    private static <T extends Comparable<T>> int getComparison(T[] values, int mid, T target){
-        /**
-         * Returns a negative value if values[mid] is less than target
-         * Returns 0 if equal
-         * Return a positive value if greater
-         */
-        validateMidValue(values, mid);
-        return values[mid].compareTo(target);
     }
 
     private static <T> void validateMidValue(T[] values, int mid){
