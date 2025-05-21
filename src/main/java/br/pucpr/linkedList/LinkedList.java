@@ -1,11 +1,15 @@
 package br.pucpr.linkedList;
 
 public class LinkedList<T> {
-    private DataNode<T> top = null;
-    private DataNode<T> botton = null;
-    private int size = 0;
+    private DataNode<T> top;
+    private DataNode<T> botton;
+    private int size;
 
-    public LinkedList(){}
+    public LinkedList(){
+        this.top = null;
+        this.botton = null;
+        this.size = 0;
+    }
 
     public void add(T data){
         var newNode = new DataNode<T>(data);
@@ -24,11 +28,10 @@ public class LinkedList<T> {
     }
 
     public void print(){
-        var currentNode = this.botton;
+        DataNode<T> currentNode = this.botton;
 
-        while(true){
-            if(currentNode == null) break;
-            System.out.println(currentNode.getData());
+        for(int i = 0; i <= size; i++){
+            System.out.print(currentNode.getData() + " ");
             currentNode = currentNode.getNext();
         }
     }
