@@ -15,9 +15,7 @@ public class LinkedList<T> {
         var newNode = new DataNode<T>(data);
 
         if(this.size == 0){
-            this.tail = newNode;
-            this.head = newNode;
-            this.size++;
+            this.addFirstElement(newNode);
             return;
         }
 
@@ -32,7 +30,10 @@ public class LinkedList<T> {
 
         var newNode = new DataNode<T>(data);
         
-        if(this.size == 0) this.add(data);
+        if(this.size == 0){
+            this.addFirstElement(newNode);
+            return;
+        };
 
         if(index == 0){
             this.head.setPrevious(newNode);
@@ -71,5 +72,13 @@ public class LinkedList<T> {
             System.out.print(currentNode.getData() + " ");
             currentNode = currentNode.getNext();
         }
+
+        System.err.println();
+    }
+
+    private void addFirstElement(DataNode<T> newNode){
+        this.tail = newNode;
+        this.head = newNode;
+        this.size++;
     }
 }
