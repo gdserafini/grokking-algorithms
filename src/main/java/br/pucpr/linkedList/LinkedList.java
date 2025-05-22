@@ -26,7 +26,7 @@ public class LinkedList<T> {
     }
 
     public void add(T data, int index){
-        if(index > this.size || index < 0) return;
+        this.checkIndex(index);
 
         var newNode = new DataNode<T>(data);
         
@@ -65,6 +65,100 @@ public class LinkedList<T> {
         this.size++;
     }
 
+    public DataNode<T> search(int index){
+        this.checkIndex(index);
+
+        DataNode<T> currentNode = this.head;
+
+        for(int i = 0; i < index; i++){
+            currentNode = currentNode.getNext();
+        }
+
+        return currentNode;
+    }
+
+    public T get(int index){
+        this.checkIndex(index);
+        return this.search(index).getData();
+    }
+
+    public boolean contains(T data){
+        int index = this.getIndex(data);
+        return index != -1;
+    }
+
+    public <T extends Comparable<T>> int getIndex(T data){
+        DataNode<T> currentNode = this.head;
+        
+        for(int i = 0; i < this.size; i++){
+            if(currentNode.getData().compareTo(data) == 0) return i;
+            currentNode = currentNode.getNext();
+        }
+
+        return -1;
+    }
+
+    public void update(T newData, int index){
+        this.checkIndex(index);
+        
+        DataNode<T> node = this.search(index);
+        node.setData(newData);
+    }
+
+    public void update(T newData, T data){
+        int index = this.getIndex(data);
+        this.checkIndex(index);
+        
+        DataNode<T> node = this.search(index);
+        node.setData(newData);
+    }
+
+    public void delete(T data){
+        int index = this.getIndex(data);
+        this.delete(index);
+    }
+
+    public void delete(int index){
+        this.checkIndex(index);
+
+        DataNode<T> currentNode = this.head;
+
+        if((index == 0 || index = this.size - 1) && this.size == 1) {
+            this.head = this.tail = null;
+            this.size--;
+            return;
+        }
+        if(index == 0) {
+            currentNode = currentNode.getNext();
+            this.head = currentNode;
+            this.head.setPrevious(null);
+            this.size--;
+            return;
+        }
+        if(index = size - 1){
+            currentNode = this.tail.getPrevious();
+            this.tail = currentNode;
+            this.tail.setNext(null);
+            this.size--;
+            return;
+        }
+
+        for(int i = 0; i < index; i++){
+            currentNode = currentNode.getNext();
+        }
+
+        DataNode<T> next = currentNode.getNext();
+        DataNode<T> previous = currentNode.getPrevious();
+        
+        if(next != null && previous != null) {
+            next.setPrevious(previous);
+            previous.setNext(next); 
+        }
+
+        currentNode = null;
+        this.size--;
+    }
+
     public void print(){
         DataNode<T> currentNode = this.head;
 
@@ -73,12 +167,18 @@ public class LinkedList<T> {
             currentNode = currentNode.getNext();
         }
 
-        System.err.println();
+        System.out.println();
     }
 
     private void addFirstElement(DataNode<T> newNode){
         this.tail = newNode;
         this.head = newNode;
         this.size++;
+    }
+
+    private void checkIndex(int index){
+        if(index >= this.size || index < 0){
+            throw new IndexOutOfBoundsException("Invalid index: " + index);  
+        }
     }
 }
