@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="br.pucpr.linkedList.LinkedListTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="br.pucpr.linkedList.LinkedListTest" time="0.004" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="force"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -59,4 +59,13 @@
   </properties>
   <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testAddElementLinkedList" time="0.001"/>
   <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testAddElementLinkedListAtIndex" time="0.001"/>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testDeleteElementLinkedList" time="0"/>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testDeleteElementLinkedListAtIndex" time="0.001"/>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testDeleteElementLinkedListByData" time="0"/>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testSearchLinkedList" time="0"/>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testGetLinkedList" time="0"/>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testContainsLinkedList" time="0"/>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testGetIndexLinkedList" time="0"/>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testUpdateLinkedListAtIndex" time="0.001"/>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testUpdateLinkedListByData" time="0"/>
 </testsuite>

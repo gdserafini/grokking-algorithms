@@ -1,6 +1,6 @@
 package br.pucpr.linkedList;
 
-public class LinkedList<T> {
+public class LinkedList<T extends Comparable<T>> {
     private DataNode<T> tail;
     private DataNode<T> head;
     private int size;
@@ -87,7 +87,7 @@ public class LinkedList<T> {
         return index != -1;
     }
 
-    public <T extends Comparable<T>> int getIndex(T data){
+    public int getIndex(T data){
         DataNode<T> currentNode = this.head;
         
         for(int i = 0; i < this.size; i++){
@@ -105,7 +105,7 @@ public class LinkedList<T> {
         node.setData(newData);
     }
 
-    public void update(T newData, T data){
+    public void updateByData(T newData, T data){
         int index = this.getIndex(data);
         this.checkIndex(index);
         
@@ -113,7 +113,15 @@ public class LinkedList<T> {
         node.setData(newData);
     }
 
-    public void delete(T data){
+    public void delete(){
+        if(this.size == 0) return;
+
+        DataNode<T> previous = this.tail.getPrevious();
+        previous.setNext(null);
+        this.tail = previous;
+    }
+
+    public void deleteByData(T data){
         int index = this.getIndex(data);
         this.delete(index);
     }
@@ -123,7 +131,7 @@ public class LinkedList<T> {
 
         DataNode<T> currentNode = this.head;
 
-        if((index == 0 || index = this.size - 1) && this.size == 1) {
+        if((index == 0 || index == this.size - 1) && this.size == 1) {
             this.head = this.tail = null;
             this.size--;
             return;
@@ -135,7 +143,7 @@ public class LinkedList<T> {
             this.size--;
             return;
         }
-        if(index = size - 1){
+        if(index == size - 1){
             currentNode = this.tail.getPrevious();
             this.tail = currentNode;
             this.tail.setNext(null);
