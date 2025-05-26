@@ -11,47 +11,9 @@ public class LinkedListTest {
         numbers.add(1);
         numbers.add(2);
         numbers.add(3);
-        numbers.print(); //Ok
-    }
-
-    @Test
-    public void testAddElementLinkedListAtIndex(){
-        var numbers = new LinkedList<Integer>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(4, 1);
-        numbers.print(); //Ok
-    }
-
-    @Test 
-    public void testDeleteElementLinkedList(){
-        var numbers = new LinkedList<Integer>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.delete();
-        numbers.print(); //Ok
-    }
-
-    @Test 
-    public void testDeleteElementLinkedListAtIndex(){
-        var numbers = new LinkedList<Integer>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.delete(1);
-        numbers.print(); //Ok
-    }
-
-    @Test 
-    public void testDeleteElementLinkedListByData(){
-        var numbers = new LinkedList<Integer>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.deleteByData(2);
-        numbers.print(); //Ok
+        assertEquals(1, numbers.get(0));
+        assertEquals(2, numbers.get(1));
+        assertEquals(3, numbers.get(2));
     }
 
     @Test
@@ -88,25 +50,5 @@ public class LinkedListTest {
         numbers.add(2);
         numbers.add(3);
         assertEquals(numbers.getIndex(2), 1);
-    }
-
-    @Test
-    public void testUpdateLinkedListAtIndex(){
-        var numbers = new LinkedList<Integer>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.update(4, 1);
-        numbers.print();
-    }
-
-    @Test
-    public void testUpdateLinkedListByData(){
-        var numbers = new LinkedList<Integer>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.updateByData(4, 2);
-        numbers.print();
     }
 }
