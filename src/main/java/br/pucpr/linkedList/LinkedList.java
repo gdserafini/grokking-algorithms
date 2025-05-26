@@ -77,6 +77,8 @@ public class LinkedList<T extends Comparable<T>> {
         return currentNode;
     }
 
+    public T get(){ return this.tail; }
+
     public T get(int index){
         this.checkIndex(index);
         return this.search(index).getData();
