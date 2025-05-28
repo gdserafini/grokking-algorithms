@@ -32,7 +32,7 @@
     <property name="java.class.version" value="65.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="5.15.167.4-microsoft-standard-WSL2"/>
+    <property name="os.version" value="6.6.87.1-microsoft-standard-WSL2"/>
     <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
     <property name="user.home" value="/home/gdserafini"/>
     <property name="user.timezone" value="America/Sao_Paulo"/>
@@ -58,7 +58,7 @@
     <property name="sun.cpu.endian" value="little"/>
   </properties>
   <testcase classname="br.pucpr.selectionSort.SelectionSortTest" name="br.pucpr.selectionSort.SelectionSortTest.testSelectionSortUnsorted" time="0"/>
-  <testcase classname="br.pucpr.selectionSort.SelectionSortTest" name="br.pucpr.selectionSort.SelectionSortTest.testSelectionSortSorted" time="0"/>
+  <testcase classname="br.pucpr.selectionSort.SelectionSortTest" name="br.pucpr.selectionSort.SelectionSortTest.testSelectionSortSorted" time="0.001"/>
   <testcase classname="br.pucpr.selectionSort.SelectionSortTest" name="br.pucpr.selectionSort.SelectionSortTest.testSelectionSortReversed" time="0"/>
-  <testcase classname="br.pucpr.selectionSort.SelectionSortTest" name="br.pucpr.selectionSort.SelectionSortTest.testSelectionSortEmpty" time="0.001"/>
+  <testcase classname="br.pucpr.selectionSort.SelectionSortTest" name="br.pucpr.selectionSort.SelectionSortTest.testSelectionSortEmpty" time="0"/>
 </testsuite>

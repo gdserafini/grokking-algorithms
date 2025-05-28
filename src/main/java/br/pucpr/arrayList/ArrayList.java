@@ -21,9 +21,9 @@ public class ArrayList<T extends Comparable<T>> {
 
     public void add(T data){
         if(lastEmptyIndex >= this.size){
-            this.size = (int) this.size * this.INCREASE_FACTOR;
+            this.size = (int) (this.size * this.INCREASE_FACTOR);
             this.copyArray();
-            this.lastEmptyIndex = oldArray.length;
+            setLastEmptyIndex();
             return;
         }
         
@@ -35,12 +35,15 @@ public class ArrayList<T extends Comparable<T>> {
         if(index < 0) throw new IllegalArgumentException("Invalid index: " + index);
         
         while(index >= this.size){
-            this.size = (int) this.size * this.INCREASE_FACTOR;
+            this.size = (int) (this.size * this.INCREASE_FACTOR);
         }
 
         this.copyArray();
         this.values[index] = data;
+        this.setLastEmptyIndex();
+    }
 
+    private void setLastEmptyIndex(){
         for(int i = 0; i < this.values.length; i++){
             if(this.values[i] == null) {
                 this.lastEmptyIndex = i;

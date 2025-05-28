@@ -32,7 +32,7 @@
     <property name="java.class.version" value="65.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="5.15.167.4-microsoft-standard-WSL2"/>
+    <property name="os.version" value="6.6.87.1-microsoft-standard-WSL2"/>
     <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
     <property name="user.home" value="/home/gdserafini"/>
     <property name="user.timezone" value="America/Sao_Paulo"/>
@@ -57,10 +57,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="br.pucpr.search.BinarySearchTest" name="br.pucpr.search.BinarySearchTest.testBinarySearchFindMid" time="0"/>
-  <testcase classname="br.pucpr.search.BinarySearchTest" name="br.pucpr.search.BinarySearchTest.testBinarySearchFindLow" time="0"/>
   <testcase classname="br.pucpr.search.BinarySearchTest" name="br.pucpr.search.BinarySearchTest.testBinarySearchFindHigh" time="0"/>
   <testcase classname="br.pucpr.search.BinarySearchTest" name="br.pucpr.search.BinarySearchTest.testBinarySearchNotFind" time="0"/>
   <testcase classname="br.pucpr.search.BinarySearchTest" name="br.pucpr.search.BinarySearchTest.testBinarySearchStartOfList" time="0"/>
   <testcase classname="br.pucpr.search.BinarySearchTest" name="br.pucpr.search.BinarySearchTest.testBinarySearchEndOfList" time="0"/>
+  <testcase classname="br.pucpr.search.BinarySearchTest" name="br.pucpr.search.BinarySearchTest.testBinarySearchFindMid" time="0"/>
+  <testcase classname="br.pucpr.search.BinarySearchTest" name="br.pucpr.search.BinarySearchTest.testBinarySearchFindLow" time="0"/>
 </testsuite>
