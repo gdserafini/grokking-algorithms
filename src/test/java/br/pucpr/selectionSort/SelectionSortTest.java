@@ -8,7 +8,7 @@ public class SelectionSortTest {
     @Test
     public void testSelectionSortUnsorted(){
         Integer[] numbers = {-1,-6,4,8,3,8};
-        Integer[] sortedNumbers = {-6, -1,3,4,8,8};
+        Integer[] sortedNumbers = {-6,-1,3,4,8,8};
         var selectionSort = new SelectionSort<Integer>();
         assertArrayEquals(sortedNumbers, selectionSort.sort(numbers));
     }
@@ -22,7 +22,7 @@ public class SelectionSortTest {
 
     @Test
     public void testSelectionSortReversed(){
-        Integer[] sortedNumbers = {-1,-2,3,4,5};
+        Integer[] sortedNumbers = {-2,-1,3,4,5};
         Integer[] reversedNumbers = {5,4,3,-1,-2};
         var selectionSort = new SelectionSort<Integer>();
         assertArrayEquals(sortedNumbers, selectionSort.sort(reversedNumbers));
@@ -32,6 +32,6 @@ public class SelectionSortTest {
     public void testSelectionSortEmpty(){
         Integer[] emptyNumbers = {};
         var selectionSort = new SelectionSort<Integer>();
-        assertArrayEquals({}, selectionSort.sort(emptyNumbers)
+        assertArrayEquals(emptyNumbers, selectionSort.sort(emptyNumbers));
     }
 }

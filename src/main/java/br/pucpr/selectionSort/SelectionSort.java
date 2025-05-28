@@ -8,16 +8,12 @@ public class SelectionSort<T extends Comparable<T>> {
         for(int i = 0; i < values.length; i++){
             for(int j = 0; j < values.length; j++){
                 if(values[i].compareTo(values[j]) < 0){
-                    changeElementsPosition(values[i], values[j]);
+                    T temp = values[i];
+                    values[i] = values[j];
+                    values[j] = temp;
                 }
             }
         }
         return values;
-    }
-
-    public void changeElementsPosition(T value1, T value2){
-        T temp = value1;
-        value1 = value2;
-        value2 = temp;
     }
 }
