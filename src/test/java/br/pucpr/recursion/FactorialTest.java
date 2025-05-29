@@ -25,4 +25,25 @@ public class FactorialTest {
         });
         assertEquals("Invalid value: -3", exception.getMessage());
     }
+
+    @Test
+    public void testFactorialTailOfZero() {
+        Factorial factorial = new Factorial();
+        assertEquals(1, factorial.calcTail(0), "0! should be 1");
+    }
+
+    @Test
+    public void testFactorialTailOfPositiveInteger() {
+        Factorial factorial = new Factorial();
+        assertEquals(120, factorial.calcTail(5), "5! should be 120");
+    }
+
+    @Test
+    public void testFactorialTailOfNegativeIntegerThrowsException() {
+        Factorial factorial = new Factorial();
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            factorial.calcTail(-3);
+        });
+        assertEquals("Invalid value: -3", exception.getMessage());
+    }
 }
