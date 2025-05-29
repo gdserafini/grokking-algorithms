@@ -32,15 +32,15 @@ public class ArrayList<T extends Comparable<T>> {
     }
 
     public void add(T data, int index){
-        if(index < 0) throw new IllegalArgumentException("Invalid index: " + index);
+        validateIndex(index);
         
         while(index >= this.size){
             this.size = (int) (this.size * this.INCREASE_FACTOR);
         }
 
-        this.copyArray();
+        copyArray();
         this.values[index] = data;
-        this.setLastEmptyIndex();
+        setLastEmptyIndex();
     }
 
     private void setLastEmptyIndex(){
@@ -64,9 +64,21 @@ public class ArrayList<T extends Comparable<T>> {
     public int getSize(){ return this.size; }
 
     public T get(int index){
-        if(index < 0 || index >= this.lastEmptyIndex) {
-            throw new IndexOutOfBoundsException("Index: " + index);
-        }
+        validateIndex(index);
         return (T) this.values[index];
+    }
+
+    public void remove(int index){
+        validateIndex(index);
+        this.values[index] = null;
+        setLastEmptyIndex();
+    }
+
+    public void set(T data, int index){ add(data, index); }
+
+    private void validateIndex(int index){
+        if(index < 0 || index >= this.lastEmptyIndex){
+            throw new IllegalArgumentException("Invalid index: " + index);   
+        }
     }
 }
