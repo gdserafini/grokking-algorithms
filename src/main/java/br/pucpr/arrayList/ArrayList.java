@@ -63,6 +63,7 @@ public class ArrayList<T extends Comparable<T>> {
 
     public int getSize(){ return this.size; }
 
+    @SuppressWarnings("unchecked")
     public T get(int index){
         validateIndex(index);
         return (T) this.values[index];

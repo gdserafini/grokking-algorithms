@@ -8,9 +8,9 @@ public class Factorial {
         return value * calc(value - 1);
     }
 
-    private int calcTailHelper(int value, long acc){
+    private int calcTailHelper(int value, int acc){
         if(value == 0 || value == 1) return acc;
-        return calcTail(value - 1; value * acc);
+        return calcTailHelper(value - 1, value * acc);
     }
 
     /*
@@ -23,6 +23,10 @@ public class Factorial {
     }
 
     private void validateValue(int value){
-        if(value < 0) throw new IllegalArgumentException("Invalid value: " + value);
+        if(value < 0) {
+            throw new IllegalArgumentException(
+                "Invalid value: " + value
+            );
+        }
     }
 }
