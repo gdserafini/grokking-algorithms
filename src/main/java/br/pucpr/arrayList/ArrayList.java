@@ -1,16 +1,21 @@
 package br.pucpr.arrayList;
 
+import java.util.Arrays;
+
 public class ArrayList<T extends Comparable<T>> {
     private Object[] values;
     private int size;
     private int lastEmptyIndex;
     private final int INIT_SIZE = 10;
-    private final double INCREASE_FACTOR = 1.5;
+    private final int INCREASE_FACTOR = 2;
 
     public ArrayList(int size){
-        if(size <= 0) throw new IllegalArgumentException("Invalid size: " + size);
+        if(size <= 0) {
+            throw new IllegalArgumentException("Invalid size: " + size);
+        }
         this.size = size;
         this.values = new Object[this.size];
+        this.lastEmptyIndex = 0;
     }
     
     public ArrayList(){
@@ -21,10 +26,8 @@ public class ArrayList<T extends Comparable<T>> {
 
     public void add(T data){
         if(lastEmptyIndex >= this.size){
-            this.size = (int) (this.size * this.INCREASE_FACTOR);
-            this.copyArray();
-            setLastEmptyIndex();
-            return;
+            this.size = this.size * this.INCREASE_FACTOR;
+            this.values = Arrays.copyOf(this.values, this.size);
         }
         
         this.values[lastEmptyIndex] = data;
@@ -35,10 +38,10 @@ public class ArrayList<T extends Comparable<T>> {
         validateIndex(index);
         
         while(index >= this.size){
-            this.size = (int) (this.size * this.INCREASE_FACTOR);
+            this.size = this.size * this.INCREASE_FACTOR;
+            this.values = Arrays.copyOf(this.values, this.size);
         }
 
-        copyArray();
         this.values[index] = data;
         setLastEmptyIndex();
     }
@@ -49,15 +52,6 @@ public class ArrayList<T extends Comparable<T>> {
                 this.lastEmptyIndex = i;
                 return;
             }
-        }
-    }
-
-    private void copyArray(){
-        Object[] oldArray = this.values;
-        this.values = new Object[this.size];
-
-        for(int i = 0; i < oldArray.length; i++){
-            this.values[i] = oldArray[i];
         }
     }
 
@@ -75,10 +69,20 @@ public class ArrayList<T extends Comparable<T>> {
         setLastEmptyIndex();
     }
 
+    public void remove(){
+        for(int i = this.size - 1; i >= 0; i--){
+            if(this.values[i] != null){
+                this.values[i] = null;
+                this.lastEmptyIndex = i;
+                return;
+            }
+        }
+    }
+
     public void set(T data, int index){ add(data, index); }
 
     private void validateIndex(int index){
-        if(index < 0 || index >= this.lastEmptyIndex){
+        if(index < 0 || index >= this.size){
             throw new IllegalArgumentException("Invalid index: " + index);   
         }
     }
