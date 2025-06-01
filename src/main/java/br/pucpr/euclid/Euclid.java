@@ -5,11 +5,13 @@ import org.javatuples.Pair;
 public class Euclid {
 
     public Pair<Integer, Integer> getMaxSides(int height, int width){
-        return null;
+        int gcd = getGCD(height, width);
+        return new Pair<Integer,Integer>(gcd, gcd);
     }
 
     public int getGCD(int value1, int value2){
-        return 0;
+        if(value2 == 0) return value1;
+        return getGCD(value2, value1 % value2);
     }
 
 }
