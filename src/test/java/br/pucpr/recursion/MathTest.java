@@ -23,7 +23,7 @@ public class MathTest {
     public void testRecursiveMaxValue(){
         var math = new Math();
         int[] numbers = {2,6,4};
-        assertEquals(6, math.size(numbers, 0, numbers[0]));
+        assertEquals(6, math.max(numbers, 0, numbers[0]));
     }
 
 }
