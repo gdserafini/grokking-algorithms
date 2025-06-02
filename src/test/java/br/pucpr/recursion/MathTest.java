@@ -12,4 +12,18 @@ public class MathTest {
         assertEquals(12, math.sum(numbers, 0, 2));
     }
 
+    @Test
+    public void testRecursiveSizeCount(){
+        var math = new Math();
+        int[] numbers = {2,4,6};
+        assertEquals(3, math.size(numbers, 0, 2));
+    }
+
+    @Test
+    public void testRecursiveMaxValue(){
+        var math = new Math();
+        int[] numbers = {2,6,4};
+        assertEquals(6, math.size(numbers, 0, numbers[0]));
+    }
+
 }
