@@ -1,16 +1,15 @@
 package br.pucpr.recursion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 
-public class SumTest {
+public class MathTest {
 
     @Test
     public void testRecursiveSum(){
-        var sum = new Sum();
+        var math = new Math();
         int[] numbers = {2,4,6};
-        assertEquals(12, sum.calc(numbers, 0, 2));
+        assertEquals(12, math.sum(numbers, 0, 2));
     }
 
 }
