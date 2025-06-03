@@ -1,4 +1,4 @@
-package br.pucpr.selectionSort;
+package br.pucpr.sort;
 
 public class SelectionSort<T extends Comparable<T>> {
 

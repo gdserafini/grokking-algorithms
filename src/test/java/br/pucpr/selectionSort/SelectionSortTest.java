@@ -3,6 +3,8 @@ package br.pucpr.selectionSort;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import org.junit.jupiter.api.Test;
 
+import br.pucpr.sort.SelectionSort;
+
 public class SelectionSortTest {
 
     @Test
