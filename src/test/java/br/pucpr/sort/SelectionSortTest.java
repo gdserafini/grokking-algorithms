@@ -1,9 +1,7 @@
-package br.pucpr.selectionSort;
+package br.pucpr.sort;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import org.junit.jupiter.api.Test;
-
-import br.pucpr.sort.SelectionSort;
 
 public class SelectionSortTest {
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="br.pucpr.recursion.MathTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="br.pucpr.recursion.MathTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="force"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -57,7 +57,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="br.pucpr.recursion.MathTest" name="br.pucpr.recursion.MathTest.testRecursiveSum" time="0.001"/>
+  <testcase classname="br.pucpr.recursion.MathTest" name="br.pucpr.recursion.MathTest.testRecursiveSum" time="0"/>
   <testcase classname="br.pucpr.recursion.MathTest" name="br.pucpr.recursion.MathTest.testRecursiveSizeCount" time="0"/>
   <testcase classname="br.pucpr.recursion.MathTest" name="br.pucpr.recursion.MathTest.testRecursiveMaxValue" time="0"/>
 </testsuite>

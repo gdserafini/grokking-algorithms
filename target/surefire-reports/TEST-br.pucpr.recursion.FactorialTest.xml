@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="br.pucpr.recursion.FactorialTest" time="0.02" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="br.pucpr.recursion.FactorialTest" time="0.007" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="force"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -57,10 +57,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="br.pucpr.recursion.FactorialTest" name="br.pucpr.recursion.FactorialTest.testFactorialOfNegativeIntegerThrowsException" time="0.011"/>
-  <testcase classname="br.pucpr.recursion.FactorialTest" name="br.pucpr.recursion.FactorialTest.testFactorialOfZero" time="0.001"/>
-  <testcase classname="br.pucpr.recursion.FactorialTest" name="br.pucpr.recursion.FactorialTest.testFactorialOfPositiveInteger" time="0.001"/>
+  <testcase classname="br.pucpr.recursion.FactorialTest" name="br.pucpr.recursion.FactorialTest.testFactorialOfNegativeIntegerThrowsException" time="0.005"/>
+  <testcase classname="br.pucpr.recursion.FactorialTest" name="br.pucpr.recursion.FactorialTest.testFactorialOfZero" time="0"/>
+  <testcase classname="br.pucpr.recursion.FactorialTest" name="br.pucpr.recursion.FactorialTest.testFactorialOfPositiveInteger" time="0"/>
   <testcase classname="br.pucpr.recursion.FactorialTest" name="br.pucpr.recursion.FactorialTest.testFactorialTailOfZero" time="0"/>
-  <testcase classname="br.pucpr.recursion.FactorialTest" name="br.pucpr.recursion.FactorialTest.testFactorialTailOfPositiveInteger" time="0.001"/>
-  <testcase classname="br.pucpr.recursion.FactorialTest" name="br.pucpr.recursion.FactorialTest.testFactorialTailOfNegativeIntegerThrowsException" time="0.006"/>
+  <testcase classname="br.pucpr.recursion.FactorialTest" name="br.pucpr.recursion.FactorialTest.testFactorialTailOfPositiveInteger" time="0"/>
+  <testcase classname="br.pucpr.recursion.FactorialTest" name="br.pucpr.recursion.FactorialTest.testFactorialTailOfNegativeIntegerThrowsException" time="0.002"/>
 </testsuite>

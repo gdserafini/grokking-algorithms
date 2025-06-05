@@ -1,6 +1,7 @@
 package br.pucpr.sort;
 
 import java.util.Arrays;
+import java.util.function.Predicate;
 
 public class QuickSort<T extends Comparable<T>> {
 
@@ -34,7 +35,8 @@ public class QuickSort<T extends Comparable<T>> {
     }
 
     private T[] concatArrays(T[] less, T pivot, T[] greater){
-        T[] result = Arrays.copyOf(this.array, this.array.length);  
+        int totalLength = less.length + 1 + greater.length;
+        T[] result = Arrays.copyOf(this.array, totalLength);  
         int index = 0;
 
         for(T e : less) result[index++] = e;
