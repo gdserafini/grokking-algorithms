@@ -11,24 +11,26 @@ public class QuickSort<T extends Comparable<T>> {
         this.counter = 0;
     }
 
-    public T[] sort(T[] array){
-        if(array.length <= 1) return array;
+    public T[] sort(T[] values){
+        if(values.length <= 1) return values;
       
-        if(counter == 0) this.array = array;
-        counter++;
+        if(counter == 0) {
+            this.array = values;
+            this.counter++;
+        }
       
-        T pivot = array[0];
-        T[] less = sort(filterArray(array, e -> e.compareTo(pivot) < 0));
-        T[] greater = sort(filterArray(array, e -> e.compareTo(pivot) > 0));
+        T pivot = values[0];
+        T[] less = sort(filterArray(values, e -> e.compareTo(pivot) < 0));
+        T[] greater = sort(filterArray(values, e -> e.compareTo(pivot) > 0));
 
         return concatArrays(less, pivot, greater);
     }
 
-    private T[] filterArray(T[] array, Predicate<T> predicate){
+    private T[] filterArray(T[] values, Predicate<T> predicate){
         return Arrays
-            .stream(array)
+            .stream(values)
             .filter(predicate)
-            .toArray(size -> Arrays.copyOf(array, size));
+            .toArray(size -> Arrays.copyOf(values, size));
     }
 
     private T[] concatArrays(T[] less, T pivot, T[] greater){
