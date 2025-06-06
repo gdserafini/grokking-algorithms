@@ -20,7 +20,7 @@ public class QuickSort<T extends Comparable<T>> {
             this.counter++;
         }
       
-        T pivot = values[0];
+        T pivot = values[values.length / 2];
         T[] less = sort(filterArray(values, e -> e.compareTo(pivot) < 0));
         T[] greater = sort(filterArray(values, e -> e.compareTo(pivot) > 0));
 
