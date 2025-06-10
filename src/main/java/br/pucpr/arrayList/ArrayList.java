@@ -2,7 +2,7 @@ package br.pucpr.arrayList;
 
 import java.util.Arrays;
 
-public class ArrayList<T extends Comparable<T>> {
+public class ArrayList<T> {
     private Object[] values;
     private int size;
     private int lastEmptyIndex;

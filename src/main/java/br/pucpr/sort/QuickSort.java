@@ -5,20 +5,8 @@ import java.util.function.Predicate;
 
 public class QuickSort<T extends Comparable<T>> {
 
-    private T[] array;
-    private int counter;
-
-    public QuickSort(){
-        this.counter = 0;
-    }
-
     public T[] sort(T[] values){
         if(values.length <= 1) return values;
-      
-        if(counter == 0) {
-            this.array = values;
-            this.counter++;
-        }
       
         T pivot = values[values.length / 2];
         T[] less = sort(filterArray(values, e -> e.compareTo(pivot) < 0));
@@ -36,13 +24,10 @@ public class QuickSort<T extends Comparable<T>> {
 
     private T[] concatArrays(T[] less, T pivot, T[] greater){
         int totalLength = less.length + 1 + greater.length;
-        T[] result = Arrays.copyOf(this.array, totalLength);  
-        int index = 0;
-
-        for(T e : less) result[index++] = e;
-        result[index++] = pivot;
-        for(T e : greater) result[index++] = e;
-
+        T[] result = Arrays.copyOf(less, totalLength);
+        result[less.length] = pivot;
+        System.arraycopy(greater, 0, result, less.length + 1, greater.length);
         return result;
     }
+
 }
