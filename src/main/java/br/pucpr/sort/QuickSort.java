@@ -26,7 +26,7 @@ public class QuickSort<T extends Comparable<T>> {
         int totalLength = less.length + 1 + greater.length;
         T[] result = Arrays.copyOf(less, totalLength);
         result[less.length] = pivot;
-        System.arraycopy(greater, 0, result, less.length + 1, greater.length);
+        System.arraycopy(greater, 0, result, less.length + 1,greater.length);
         return result;
     }
 
