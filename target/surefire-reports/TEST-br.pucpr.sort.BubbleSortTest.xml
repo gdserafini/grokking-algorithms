@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="br.pucpr.sort.BubbleSortTest" time="0.026" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="br.pucpr.sort.BubbleSortTest" time="0.008" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="force"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -57,7 +57,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="br.pucpr.sort.BubbleSortTest" name="br.pucpr.sort.BubbleSortTest.testBubbleSortReversed" time="0.026"/>
+  <testcase classname="br.pucpr.sort.BubbleSortTest" name="br.pucpr.sort.BubbleSortTest.testBubbleSortReversed" time="0.008"/>
   <testcase classname="br.pucpr.sort.BubbleSortTest" name="br.pucpr.sort.BubbleSortTest.testBubbleSortEmpty" time="0"/>
   <testcase classname="br.pucpr.sort.BubbleSortTest" name="br.pucpr.sort.BubbleSortTest.testBubbleSortUnsorted" time="0"/>
   <testcase classname="br.pucpr.sort.BubbleSortTest" name="br.pucpr.sort.BubbleSortTest.testBubbleSortSorted" time="0"/>
