@@ -27,6 +27,6 @@ public class HashTable<T extends Comparable<T>> {
 
     public void add(T value){
         int index = hash(value);
-        this.table[index].add(value);
+        this.table.get(index).add(value);
     }
 }

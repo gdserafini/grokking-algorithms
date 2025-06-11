@@ -1,5 +1,5 @@
 /home/gdserafini/projects/grokking-algorithms/src/test/java/br/pucpr/search/BinarySearchTest.java
-/home/gdserafini/projects/grokking-algorithms/src/test/java/br/pucpr/sort/SelectionSortTest.java
+/home/gdserafini/projects/grokking-algorithms/src/test/java/br/pucpr/sort/BubbleSortTest.java
 /home/gdserafini/projects/grokking-algorithms/src/test/java/br/pucpr/recursion/MathTest.java
 /home/gdserafini/projects/grokking-algorithms/src/test/java/br/pucpr/MainTest.java
 /home/gdserafini/projects/grokking-algorithms/src/test/java/br/pucpr/euclid/EuclidTest.java
