@@ -1,6 +1,6 @@
 package br.pucpr.sort;
 
-public class SelectionSort<T extends Comparable<T>> {
+public class BubbleSort<T extends Comparable<T>> {
 
     public T[] sort(T[] values){
         if(values == null || values.length == 0) return values;
