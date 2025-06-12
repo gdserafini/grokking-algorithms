@@ -17,16 +17,14 @@ public class HashTable<T extends Comparable<T>> {
         }
     }
 
-    private int hash(T value){
-        var stringValue = String.valueOf(value);
-        int valueLen = stringValue.length();
-
+    private int hash(String key){
+        int valueLen = key.length();
         if(valueLen > this.size) return valueLen % this.size;
         return this.size % valueLen;
     }
 
-    public void add(T value){
-        int index = hash(value);
+    public void add(String key, T value){
+        int index = hash(key);
         this.table.get(index).add(value);
     }
 }
