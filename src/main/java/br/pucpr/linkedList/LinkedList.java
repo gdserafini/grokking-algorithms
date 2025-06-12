@@ -25,6 +25,20 @@ public class LinkedList<T extends Comparable<T>> {
         this.size++;
     }
 
+    public void addWithKey(String key, T data){
+        var newNode = new DataNode<T>(key, data);
+
+        if(this.size == 0){
+            this.addFirstElement(newNode);
+            return;
+        }
+
+        this.tail.setNext(newNode);
+        newNode.setPrevious(this.tail);
+        this.tail = newNode;
+        this.size++;
+    }
+
     public void add(T data, int index){
         this.checkIndex(index);
 
@@ -82,6 +96,17 @@ public class LinkedList<T extends Comparable<T>> {
     public T get(int index){
         this.checkIndex(index);
         return this.search(index).getData();
+    }
+
+    public T getByKey(String key){
+        DataNode<T> currentNode = this.head;
+
+        for(int i = 0; i < this.size; i++){
+            if(currentNode.getKey().equalsTo(key)) return currentNode.getData();
+            currentNode = currentNode.getNext();
+        }
+
+        return null;
     }
 
     public boolean contains(T data){
