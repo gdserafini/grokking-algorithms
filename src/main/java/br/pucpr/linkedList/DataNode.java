@@ -1,6 +1,7 @@
 package br.pucpr.linkedList;
 
 public class DataNode<T> {
+    private String key;
     private T data;
     DataNode<T> previous, next;
 
@@ -8,6 +9,19 @@ public class DataNode<T> {
 
     public DataNode(T data){
         this.data = data;
+    }
+
+    public DataNode(String key, T data){
+        this.key = key;
+        this.data = data;
+    }
+
+    public void setKey(String key){
+        this.key = key;
+    }
+
+    public String getKey(){
+        return this.key;
     }
 
     public void setData(T data){
