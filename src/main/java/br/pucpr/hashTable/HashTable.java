@@ -27,4 +27,9 @@ public class HashTable<T extends Comparable<T>> {
         int index = hash(key);
         this.table.get(index).add(value);
     }
+
+    public T get(String key){
+        int index = hash(key);
+        return this.table.get(index).getBykey(key);
+    }
 }
