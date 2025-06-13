@@ -28,8 +28,13 @@ public class HashTable<T extends Comparable<T>> {
         this.table.get(index).addWithKey(key, value);
     }
 
-    public T get(String key){
+    public T getValue(String key){
         int index = hash(key);
         return this.table.get(index).getBykey(key);
+    }
+
+    public boolean contains(String key){
+        int index = hash(key);
+        return this.table.get(index).getByKey(key) != null;
     }
 }
