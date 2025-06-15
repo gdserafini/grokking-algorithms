@@ -30,7 +30,7 @@ public class HashTable<T extends Comparable<T>> {
 
     public T getValue(String key){
         int index = hash(key);
-        return this.table.get(index).getBykey(key);
+        return this.table.get(index).getByKey(key);
     }
 
     public boolean contains(String key){

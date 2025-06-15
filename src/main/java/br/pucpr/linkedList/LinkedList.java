@@ -102,7 +102,7 @@ public class LinkedList<T extends Comparable<T>> {
         DataNode<T> currentNode = this.head;
 
         for(int i = 0; i < this.size; i++){
-            if(currentNode.getKey().equalsTo(key)) return currentNode.getData();
+            if(currentNode.getKey().equals(key)) return currentNode.getData();
             currentNode = currentNode.getNext();
         }
 
