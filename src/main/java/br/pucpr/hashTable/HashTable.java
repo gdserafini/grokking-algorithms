@@ -7,9 +7,14 @@ public class HashTable<T extends Comparable<T>> {
 
     private ArrayList<LinkedList<T>> table;
     private int size;
+    private double loadFactor;
+    private final double MAX_LOAD_FACTOR = 0.7;
+    private int emptySlots;
 
     public HashTable(){
         this.size = 10;
+        this.emptySlots = this.size;
+        this.loadFactor = (this.size - this.emptySlots) / this.size;
         this.table = new ArrayList<LinkedList<T>>(size);
 
         for(int i = 0; i < this.size; i++){
@@ -25,8 +30,16 @@ public class HashTable<T extends Comparable<T>> {
 
     public void add(String key, T value){
         int index = hash(key);
+        LinkedList<T> slot = this.table.get(index);
+        if(slot.get() == null) {
+            this.emptySlots--;
+            this.loadFactor = (this.size - this.emptySlots) / this.size;
+        }
+        //if(this.loadFactor >= this.MAX_LOAD_FACTOR) resize();
         this.table.get(index).addWithKey(key, value);
     }
+
+    //public void resize(){}
 
     public T getValue(String key){
         int index = hash(key);
