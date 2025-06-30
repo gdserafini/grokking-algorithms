@@ -2,14 +2,14 @@ package br.pucpr.recursion;
 
 public class Counter {
 
-    public void count(int value){
+    public int count(int value){
         if(value <= 0) {
             System.err.println();
-            return;
+            return value;
         }
         
         System.out.print(value + " ");
-        count(value - 1);
+        return count(value - 1);
     }
 
 }
