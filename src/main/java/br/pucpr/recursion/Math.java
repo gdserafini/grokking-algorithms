@@ -23,7 +23,7 @@ public class Math {
         return max(values, index + 1, max);
     }
 
-    public void validateArrayIndexes(int[] values, int start, int end){
+    private void validateArrayIndexes(int[] values, int start, int end){
         if(start < 0 || start >= values.length ||
             end < 0 || end >= values.length
         ){
