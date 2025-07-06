@@ -1,5 +1,6 @@
 package br.pucpr.hashTable;
 
+import br.pucpr.DataNode;
 import br.pucpr.arrayList.ArrayList;
 import br.pucpr.linkedList.LinkedList;
 
@@ -28,7 +29,7 @@ public class HashTable<T extends Comparable<T>> {
         for(int i = 0; i < key.length(); i++){
             hashCode = this.HASH_CODE_MULT * hashCode + key.charAt(i);
         }
-        return Math.abs(hash) % this.size;
+        return Math.abs(hashCode) % this.size;
     }
 
     public void add(String key, T value){
@@ -57,7 +58,7 @@ public class HashTable<T extends Comparable<T>> {
         }
         for(int i = 0; i < oldSize; i++){
             LinkedList<T> slot = copy.get(i);
-            Node<T> currentNode = slot.get();
+            DataNode<T> currentNode = slot.getNode();
             while(currentNode != null){
                 this.rehash(currentNode.getKey(), currentNode.getData());
                 currentNode = currentNode.getNext();

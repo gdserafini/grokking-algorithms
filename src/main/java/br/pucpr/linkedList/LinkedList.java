@@ -1,5 +1,7 @@
 package br.pucpr.linkedList;
 
+import br.pucpr.DataNode;
+
 public class LinkedList<T extends Comparable<T>> {
     private DataNode<T> tail;
     private DataNode<T> head;
@@ -92,6 +94,8 @@ public class LinkedList<T extends Comparable<T>> {
     }
 
     public T get(){ return this.tail.getData(); }
+
+    public DataNode<T> getNode() { return this.tail; }
 
     public T get(int index){
         this.checkIndex(index);

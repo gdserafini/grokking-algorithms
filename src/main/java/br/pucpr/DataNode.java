@@ -1,4 +1,4 @@
-package br.pucpr.linkedList;
+package br.pucpr;
 
 public class DataNode<T> {
     private String key;

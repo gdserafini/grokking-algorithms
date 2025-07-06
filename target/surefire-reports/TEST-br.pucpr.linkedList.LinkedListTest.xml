@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="br.pucpr.linkedList.LinkedListTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="br.pucpr.linkedList.LinkedListTest" time="0" errors="0" skipped="0">
   <properties>
-    <property name="jansi.mode" value="force"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="java.vm.version" value="21.0.7+6-Ubuntu-0ubuntu124.04"/>
+    <property name="java.vm.version" value="21.0.7+6-Ubuntu-0ubuntu120.04"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/gdserafini/projects/grokking-algorithms"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/giordano/projects/grokking-algorithms"/>
     <property name="java.vm.vendor" value="Ubuntu"/>
     <property name="java.vendor.url" value="https://ubuntu.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -13,9 +12,9 @@
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/gdserafini/projects/grokking-algorithms"/>
+    <property name="user.dir" value="/home/giordano/projects/grokking-algorithms"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
-    <property name="java.runtime.version" value="21.0.7+6-Ubuntu-0ubuntu124.04"/>
+    <property name="java.runtime.version" value="21.0.7+6-Ubuntu-0ubuntu120.04"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
@@ -32,13 +31,13 @@
     <property name="java.class.version" value="65.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="6.6.87.1-microsoft-standard-WSL2"/>
+    <property name="os.version" value="6.6.87.2-microsoft-standard-WSL2"/>
     <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
-    <property name="user.home" value="/home/gdserafini"/>
+    <property name="user.home" value="/home/giordano"/>
     <property name="user.timezone" value="America/Sao_Paulo"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="21"/>
-    <property name="user.name" value="gdserafini"/>
+    <property name="user.name" value="giordano"/>
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.arch.data.model" value="64"/>
@@ -49,6 +48,7 @@
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.version" value="21.0.7"/>
     <property name="native.encoding" value="UTF-8"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
     <property name="java.vendor" value="Ubuntu"/>
     <property name="maven.home" value="/usr/share/maven"/>
     <property name="file.separator" value="/"/>
@@ -57,9 +57,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testAddElementLinkedList" time="0"/>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testSearchLinkedList" time="0"/>
+  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testGetLinkedList" time="0"/>
   <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testContainsLinkedList" time="0"/>
   <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testGetIndexLinkedList" time="0"/>
-  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testAddElementLinkedList" time="0"/>
-  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testSearchLinkedList" time="0.001"/>
-  <testcase classname="br.pucpr.linkedList.LinkedListTest" name="br.pucpr.linkedList.LinkedListTest.testGetLinkedList" time="0"/>
 </testsuite>
