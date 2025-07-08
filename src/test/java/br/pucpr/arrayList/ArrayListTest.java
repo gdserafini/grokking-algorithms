@@ -9,7 +9,7 @@ public class ArrayListTest {
     public void testAdd(){
         var list = new ArrayList<Integer>();
         list.add(1);
-        assertEquals(1, list.get());
+        assertEquals(1, list.get(0));
     }
 
     @Test
