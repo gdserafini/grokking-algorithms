@@ -57,6 +57,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="br.pucpr.euclid.EuclidTest" name="br.pucpr.euclid.EuclidTest.testGetMaxSides" time="0"/>
   <testcase classname="br.pucpr.euclid.EuclidTest" name="br.pucpr.euclid.EuclidTest.testGetGCD" time="0"/>
+  <testcase classname="br.pucpr.euclid.EuclidTest" name="br.pucpr.euclid.EuclidTest.testGetMaxSides" time="0"/>
 </testsuite>

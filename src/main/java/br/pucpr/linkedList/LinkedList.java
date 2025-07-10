@@ -147,9 +147,17 @@ public class LinkedList<T extends Comparable<T>> {
     public void delete(){
         if(this.size == 0) return;
 
+        if(this.size == 1){
+            this.head = null;
+            this.tail = null;
+            this.size = 0;
+            return;
+        }
+
         DataNode<T> previous = this.tail.getPrevious();
         previous.setNext(null);
         this.tail = previous;
+        this.size--;
     }
 
     public void deleteByData(T data){

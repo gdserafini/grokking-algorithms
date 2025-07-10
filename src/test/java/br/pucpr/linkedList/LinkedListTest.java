@@ -1,6 +1,8 @@
 package br.pucpr.linkedList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {
@@ -27,8 +29,8 @@ public class LinkedListTest {
     @Test
     public void testAddWithKey(){
         var numbers = new LinkedList<Integer>();
-        numbers.add("One", 1);
-        numbers.add("Two", 2);
+        numbers.addWithKey("One", 1);
+        numbers.addWithKey("Two", 2);
         assertEquals(1, numbers.getByKey("One"));
         assertEquals(2, numbers.getByKey("Two"));
     }
@@ -65,7 +67,7 @@ public class LinkedListTest {
         var numbers = new LinkedList<Integer>();
         numbers.add(1);
         numbers.add(2);
-        numbers.update(3, 1)
+        numbers.update(3, 1);
         assertEquals(numbers.get(1), 3);
     }
 
@@ -74,7 +76,7 @@ public class LinkedListTest {
         var numbers = new LinkedList<Integer>();
         numbers.add(1);
         numbers.add(2);
-        numbers.updateByData(3, 2)
+        numbers.updateByData(3, 2);
         assertEquals(numbers.get(1), 3);
     }
 
@@ -84,7 +86,7 @@ public class LinkedListTest {
         numbers.add(1);
         numbers.add(2);
         numbers.delete();
-        assertEquals(numbers.get(1), null);
+        assertThrows(IndexOutOfBoundsException.class, () -> numbers.get(1));
     }
 
     @Test
@@ -93,7 +95,7 @@ public class LinkedListTest {
         numbers.add(1);
         numbers.add(2);
         numbers.delete(1);
-        assertEquals(numbers.get(1), null);
+        assertThrows(IndexOutOfBoundsException.class, () -> numbers.get(1));
     }
 
     @Test
@@ -102,6 +104,6 @@ public class LinkedListTest {
         numbers.add(1);
         numbers.add(2);
         numbers.deleteByData(2);
-        assertEquals(numbers.get(1), null);
+        assertThrows(IndexOutOfBoundsException.class, () -> numbers.get(1));
     }
 }

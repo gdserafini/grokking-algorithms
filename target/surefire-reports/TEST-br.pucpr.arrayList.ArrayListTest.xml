@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="br.pucpr.arrayList.ArrayListTest" time="0.006" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="br.pucpr.arrayList.ArrayListTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="21.0.7+6-Ubuntu-0ubuntu120.04"/>
@@ -57,10 +57,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testAdd" time="0.002"/>
-  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testAddAtIndex" time="0.001"/>
-  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testGetByIndex" time="0.001"/>
+  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testAddAtIndex" time="0"/>
+  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testAdd" time="0"/>
+  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testGetByIndex" time="0"/>
   <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testRemoveByIndex" time="0"/>
-  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testRemove" time="0.001"/>
-  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testSetByIndex" time="0.001"/>
+  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testRemove" time="0"/>
+  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testSetByIndex" time="0"/>
 </testsuite>
