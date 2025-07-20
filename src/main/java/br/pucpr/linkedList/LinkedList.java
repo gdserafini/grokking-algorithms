@@ -13,6 +13,8 @@ public class LinkedList<T extends Comparable<T>> {
         this.size = 0;
     }
 
+    public boolean isEmpty(){ return this.size == 0; }
+
     public void add(T data){
         var newNode = new DataNode<T>(data);
 

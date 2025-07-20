@@ -4,6 +4,7 @@
 /home/giordano/projects/grokking-algorithms/src/test/java/br/pucpr/search/BinarySearchTest.java
 /home/giordano/projects/grokking-algorithms/src/test/java/br/pucpr/sort/InsertionSortTest.java
 /home/giordano/projects/grokking-algorithms/src/test/java/br/pucpr/arrayList/ArrayListTest.java
+/home/giordano/projects/grokking-algorithms/src/test/java/br/pucpr/hashTable/HashTableTest.java
 /home/giordano/projects/grokking-algorithms/src/test/java/br/pucpr/recursion/CounterTest.java
 /home/giordano/projects/grokking-algorithms/src/test/java/br/pucpr/recursion/MathTest.java
 /home/giordano/projects/grokking-algorithms/src/test/java/br/pucpr/euclid/EuclidTest.java

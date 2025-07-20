@@ -35,9 +35,7 @@ public class HashTable<T extends Comparable<T>> {
     public void add(String key, T value){
         int index = hash(key);
         LinkedList<T> slot = this.table.get(index);
-        if(slot.get() == null) {
-            this.emptySlots--;
-        }
+        if(slot.isEmpty()) this.emptySlots--;
         this.loadFactor = (this.size - this.emptySlots) / this.size;
         if(this.loadFactor >= this.MAX_LOAD_FACTOR){
             resize();
@@ -46,7 +44,7 @@ public class HashTable<T extends Comparable<T>> {
         slot.addWithKey(key, value);
     }
 
-    public void resize(){
+    private void resize(){
         int oldSize = this.size;
         this.size = this.size * this.MULT_LOAD_FACTOR;
         this.emptySlots = this.size;
