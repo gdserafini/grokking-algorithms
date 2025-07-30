@@ -8,12 +8,18 @@ public class Graph{
     }
 
     public void add(String node, ArrayList<String> neighboors){
-        if(node == null || neighboors == null ||  neighboors.length == 0) return; 
+        if(
+            node == null || 
+            neighboors == null || neighboors.getSize() == 0
+        ) return; 
         graph.add(node, neighboors);
     }
 
     public void add(String node, String newNeighboor){
-        if(node == null || newNeighboor == null) return; 
+        if(
+            node == null || !graph.contains(node) ||
+            newNeighboor == null
+        ) return; 
         ArrayList<String> neighboors = graph.get(node);
         neighboors.add(newNeighboor);
     }
