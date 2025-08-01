@@ -1,13 +1,13 @@
 package br.pucpr.graph;
 
 public class Graph{
-    private HashTable<ArrayList<String>> graph;
+    private HashTable<LinkedList<String>> graph;
 
     public Graph(){
-        this.graph = new HashTable<ArrayList<String>>;
+        this.graph = new HashTable<LinkedList<String>>;
     }
 
-    public void add(String node, ArrayList<String> neighboors){
+    public void add(String node, LinkedList<String> neighboors){
         if(
             node == null || 
             neighboors == null || neighboors.getSize() == 0
@@ -20,11 +20,23 @@ public class Graph{
             node == null || !graph.contains(node) ||
             newNeighboor == null
         ) return; 
-        ArrayList<String> neighboors = graph.get(node);
+        LinkedList<String> neighboors = graph.get(node);
         neighboors.add(newNeighboor);
     }
 
-    public ArrayList<String> bfs(String start, String end){
-        
+    public LinkedList<String> bfs(String start, String end){
+        if(!graph.contains(start) || !graph.contains(end)) return;
+        var path = new LinkedList<String>;
+        String current = start;
+        while(true){
+            LinkedList<String> neighboors = graph.get(current);
+            for(int i = 0; i < neighboors.getSize(); i++){
+                neighboor = neighboors.get(i)
+                path.add(neighboor);
+                if(neighboor == end) return path
+            }
+            current = current.getNext();
+            if(current == null) return;
+        }
     }
 }
