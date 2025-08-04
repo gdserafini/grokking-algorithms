@@ -29,14 +29,7 @@ public class Graph{
         var path = new LinkedList<String>;
         String current = start;
         while(true){
-            LinkedList<String> neighboors = graph.get(current);
-            for(int i = 0; i < neighboors.getSize(); i++){
-                neighboor = neighboors.get(i)
-                path.add(neighboor);
-                if(neighboor == end) return path
-            }
-            current = current.getNext();
-            if(current == null) return;
+           
         }
     }
 }
