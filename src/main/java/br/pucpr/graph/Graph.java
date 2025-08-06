@@ -7,21 +7,22 @@ public class Graph{
         this.graph = new HashTable<LinkedList<String>>;
     }
 
-    public void add(String node, LinkedList<String> neighboors){
+    public void add(String node, LinkedList<String> neighbors){
         if(
-            node == null || 
-            neighboors == null || neighboors.getSize() == 0
+            node == null || graph.contains(node) ||
+            neighbors == null || neighbors.getSize() == 0
         ) return; 
-        graph.add(node, neighboors);
+        graph.add(node, neighbors);
     }
 
-    public void add(String node, String newNeighboor){
+    public void add(String node, String newNeighbor){
         if(
             node == null || !graph.contains(node) ||
-            newNeighboor == null
+            newNeighbor == null
         ) return; 
-        LinkedList<String> neighboors = graph.get(node);
-        neighboors.add(newNeighboor);
+        LinkedList<String> neighbors = graph.get(node);
+        if(neighbors.contains(newNeighbor)) return;
+        neighboors.add(newNeighbor);
     }
 
     public LinkedList<String> bfs(String start, String end){
