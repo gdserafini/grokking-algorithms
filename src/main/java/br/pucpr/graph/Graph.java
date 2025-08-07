@@ -4,7 +4,7 @@ public class Graph{
     private HashTable<LinkedList<String>> graph;
 
     public Graph(){
-        this.graph = new HashTable<LinkedList<String>>;
+        this.graph = new HashTable<LinkedList<String>>();
     }
 
     public void add(String node, LinkedList<String> neighbors){
@@ -22,10 +22,33 @@ public class Graph{
         ) return; 
         LinkedList<String> neighbors = graph.get(node);
         if(neighbors.contains(newNeighbor)) return;
-        neighboors.add(newNeighbor);
+        neighbors.add(newNeighbor);
     }
 
     public LinkedList<String> bfs(String start, String end){
-        
+        if(
+            start == null || end == null ||
+            !graph.contains(start) || !graph.contains(end)
+        ) return;
+        var path = new LinkedList<String>();
+        var list = new LinkedList<String>();
+        String current = start;
+        while(true){
+            LinkedList<String> neighbors = graph.get(start);
+            for(int i = 0; i < neighbors.getSize(); i++){
+                if(current.equals(end)){
+                    path.add(current);
+                    return path;
+                }
+                else{
+                    String next = neighbors.get(i)
+                    LinkedList<String> nextNeighbors = graph.get(next);
+                    //TODO -> Implement append method
+                    //neighbors.append(nextNeighbors);
+                    current = next;
+                }
+            }
+            return null;
+        }
     }
 }
