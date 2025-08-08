@@ -34,21 +34,22 @@ public class Graph{
         var list = new LinkedList<String>();
         String current = start;
         while(true){
-            LinkedList<String> neighbors = graph.get(start);
-            for(int i = 0; i < neighbors.getSize(); i++){
+            LinkedList<String> neighbors = graph.get(current);
+            //TODO -> Implement append method
+            //list.append(neighbors);
+            for(int i = 0; i < list.getSize(); i++){
                 if(current.equals(end)){
                     path.add(current);
                     return path;
                 }
                 else{
-                    String next = neighbors.get(i)
+                    String next = list.get(i+1);
+                    if(next == null) return null;
                     LinkedList<String> nextNeighbors = graph.get(next);
-                    //TODO -> Implement append method
-                    //neighbors.append(nextNeighbors);
+                    //list.append(nextNeighbors);
                     current = next;
                 }
             }
-            return null;
         }
     }
 }
