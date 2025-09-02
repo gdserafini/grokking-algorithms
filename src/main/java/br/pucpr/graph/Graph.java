@@ -15,16 +15,6 @@ public class Graph{
         graph.add(node, neighbors);
     }
 
-    public void add(String node, String newNeighbor){
-        if(
-            node == null || !graph.contains(node) ||
-            newNeighbor == null
-        ) return; 
-        LinkedList<String> neighbors = graph.get(node);
-        if(neighbors.contains(newNeighbor)) return;
-        neighbors.add(newNeighbor);
-    }
-
     public LinkedList<String> bfs(String start, String end){
         if(
             start == null || end == null ||
@@ -32,22 +22,23 @@ public class Graph{
         ) return;
         var path = new LinkedList<String>();
         var list = new LinkedList<String>();
-        String current = start;
+        path.add(start);
+        LinkedList<String> neighbors = graph.get(start);
+        //TODO -> Implement append method
+        //list.append(neighbors);
         while(true){
-            LinkedList<String> neighbors = graph.get(current);
-            //TODO -> Implement append method
-            //list.append(neighbors);
             for(int i = 0; i < list.getSize(); i++){
-                if(current.equals(end)){
-                    path.add(current);
+                neighbor = list.get(i);
+                if(neighbor.equals(end){
+                    path.add(neighbor);
                     return path;
                 }
                 else{
-                    String next = list.get(i+1);
-                    if(next == null) return null;
-                    LinkedList<String> nextNeighbors = graph.get(next);
+                    path.add(neighbor);
+                    LinkedList<String> nextNeighbors = graph.get(neighbor);
+                    if(neighbor == null || nextNeighbors == null) return null;
+                    //TODO -> Implement append method
                     //list.append(nextNeighbors);
-                    current = next;
                 }
             }
         }
