@@ -7,7 +7,7 @@ public class HashTableTest {
 
     @Test
     public void testAdd(){
-        var table = new HashTable<Integer>();
+        var table = new HashTable<String, Integer>();
         table.add("one", 1);
         table.add("two", 2);
         table.add("three", 3);           
@@ -16,7 +16,7 @@ public class HashTableTest {
 
     @Test
     public void testContains(){
-        var table = new HashTable<Integer>();
+        var table = new HashTable<String, Integer>();
         table.add("one", 1);
         table.add("two", 2);
         table.add("three", 3);           

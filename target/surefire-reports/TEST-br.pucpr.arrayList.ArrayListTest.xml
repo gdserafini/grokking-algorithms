@@ -60,7 +60,7 @@
   <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testAddAtIndex" time="0"/>
   <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testAdd" time="0"/>
   <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testGetByIndex" time="0"/>
-  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testRemoveByIndex" time="0.001"/>
-  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testRemove" time="0"/>
+  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testRemoveByIndex" time="0"/>
+  <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testRemove" time="0.001"/>
   <testcase classname="br.pucpr.arrayList.ArrayListTest" name="br.pucpr.arrayList.ArrayListTest.testSetByIndex" time="0"/>
 </testsuite>

@@ -4,9 +4,10 @@ import br.pucpr.DataNode;
 import br.pucpr.arrayList.ArrayList;
 import br.pucpr.linkedList.LinkedList;
 
-public class HashTable<T extends Comparable<T>> {
-
-    private ArrayList<LinkedList<T>> table;
+public class HashTable
+    <K extends Comparable<K>, V extends Comparable<V>> 
+{
+    private ArrayList<LinkedList<V>> table;
     private int size;
     private double loadFactor;
     private final double MAX_LOAD_FACTOR = 0.7;
@@ -18,9 +19,13 @@ public class HashTable<T extends Comparable<T>> {
         this.size = 10;
         this.emptySlots = this.size;
         this.loadFactor = (this.size - this.emptySlots) / this.size;
-        this.table = new ArrayList<LinkedList<T>>(size);
-        for(int i = 0; i < this.size; i++){
-            this.table.add(new LinkedList<T>());
+        this.table = new ArrayList<LinkedList<V>>(size);
+        this.initEmptyTable(this.size);
+    }
+
+    private void initEmptyTable(int tableSize){
+        for(int i = 0; i < tableSize; i++){
+            this.table.add(new LinkedList<V>());
         }
     }
 
@@ -32,16 +37,16 @@ public class HashTable<T extends Comparable<T>> {
         return Math.abs(hashCode) % this.size;
     }
 
-    public void add(String key, T value){
-        int index = hash(key);
-        LinkedList<T> slot = this.table.get(index);
+    public void add(K key, V value){
+        int index = hash(String.valueOf(key));
+        LinkedList<V> slot = this.table.get(index);
         if(slot.isEmpty()) this.emptySlots--;
         this.loadFactor = (this.size - this.emptySlots) / this.size;
         if(this.loadFactor >= this.MAX_LOAD_FACTOR){
             resize();
             return;
         }
-        slot.addWithKey(key, value);
+        slot.addWithKey(String.valueOf(key), value);
     }
 
     private void resize(){
@@ -49,14 +54,14 @@ public class HashTable<T extends Comparable<T>> {
         this.size = this.size * this.MULT_LOAD_FACTOR;
         this.emptySlots = this.size;
         this.loadFactor = (this.size - this.emptySlots) / this.size;
-        ArrayList<LinkedList<T>> copy = this.table;
-        this.table = new ArrayList<LinkedList<T>>(size);
+        ArrayList<LinkedList<V>> copy = this.table;
+        this.table = new ArrayList<LinkedList<V>>(size);
         for(int i = 0; i < this.size; i++){
-            this.table.add(new LinkedList<T>());
+            this.table.add(new LinkedList<V>());
         }
         for(int i = 0; i < oldSize; i++){
-            LinkedList<T> slot = copy.get(i);
-            DataNode<T> currentNode = slot.getNode();
+            LinkedList<V> slot = copy.get(i);
+            DataNode<V> currentNode = slot.getNode();
             while(currentNode != null){
                 this.rehash(currentNode.getKey(), currentNode.getData());
                 currentNode = currentNode.getNext();
@@ -65,20 +70,20 @@ public class HashTable<T extends Comparable<T>> {
         this.loadFactor = (this.size - this.emptySlots) / this.size;
     }
 
-    private void rehash(String key, T value){
+    private void rehash(String key, V value){
         int index = hash(key);
-        LinkedList<T> slot = this.table.get(index);
+        LinkedList<V> slot = this.table.get(index);
         if(slot.get() == null) this.emptySlots--;
         this.table.get(index).addWithKey(key, value);
     }
 
-    public T getValue(String key){
-        int index = hash(key);
-        return this.table.get(index).getByKey(key);
+    public V getValue(K key){
+        int index = hash(String.valueOf(key));
+        return this.table.get(index).getByKey(String.valueOf(key));
     }
 
-    public boolean contains(String key){
-        int index = hash(key);
-        return this.table.get(index).getByKey(key) != null;
+    public boolean contains(K key){
+        int index = hash(String.valueOf(key));
+        return this.table.get(index).getByKey(String.valueOf(key)) != null;
     }
 }
